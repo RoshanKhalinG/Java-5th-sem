@@ -249,4 +249,78 @@ console.log(a.d[0].b);
 
  //-----EXERCISE-------
  
- Lalitpur,
+
+ let contacts = [{
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ },
+ {
+    name : "test",
+    email : 'test@test.com'
+ }]
+
+function getContactString() {
+    let contactstring ='Your Contacts'
+    for(let i=0; i<5; i++){
+        if(contacts[i]){
+            contactstring += `\n${i}.Name : ${contacts[i].name},
+            Email : ${contacts[i].email}`
+        }
+    }
+    return contactstring
+}
+
+console.log(getContactString())
+
+let input = prompt(getContactString())
+
+switch (input){
+    case 'a':
+        let name = prompt('Enter Name')
+        let email = prompt('Enter Email')
+
+        contacts.push({
+            name : name,
+            email:email
+        })
+        break;
+
+        case 'b':
+            let contactname = prompt('Enter Name');
+
+            let contactstring = 'Search Results'
+            for(let i = 0; i<contacts.length; i++){
+                  if(contacts[i].name===contactname){
+                contactstring += `\n${i}.Name : ${contacts[i].name},
+                Email : ${contacts[i].email}`
+            }
+            }
+          
+            
+        
+            alert(contactstring)
+        
+          default:
+            break;
+}
+
