@@ -255,27 +255,27 @@ console.log(a.d[0].b);
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test1",
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test2",
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test3",
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test4",
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test5",
     email : 'test@test.com'
  },
  {
-    name : "test",
+    name : "test6",
     email : 'test@test.com'
  }]
 
@@ -292,8 +292,10 @@ function getContactString() {
 
 console.log(getContactString())
 
-let input = prompt(getContactString())
 
+
+  for(let i= 1; i>0; i++){
+ let input = prompt(getContactString())
 switch (input){
     case 'a':
         let name = prompt('Enter Name')
@@ -315,12 +317,20 @@ switch (input){
                 Email : ${contacts[i].email}`
             }
             }
-          
-            
-        
             alert(contactstring)
+              break;
+
+            case 'c':
+                let contactIndex = prompt('Enter ContactIndex')
+                contacts=contacts.filter(function(value , index){
+                    return index !== parseInt(contactIndex)  
+                })
+                break;
+            case 'd':
+                i=-5
+                break;    
         
           default:
             break;
-}
-
+    }
+  }
